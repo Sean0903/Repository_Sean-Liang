@@ -1,1 +1,27 @@
 # Repository_Sean-Liang
+
+open class Human{
+    open var name:String="Sean"
+    open fun attack(){
+        var x = "${name} use Fist Attack!"
+        print(x)
+}
+}
+
+class Mage : Human(){
+    override var name:String="Jake"
+    override fun attack(){
+        var x = "${name} use Fireball!"
+        print(x)
+    }
+
+
+}
+    val human = Human()
+    val mage = Mage()
+
+    println(human.attack())
+    println(mage.attack())
+
+
+
