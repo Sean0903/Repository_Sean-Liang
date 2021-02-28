@@ -1,27 +1,47 @@
 # Repository_Sean-Liang
 
-open class Human{
-    open var name:String="Sean"
-    open fun attack(){
+open class Human {
+    open var name: String = "Sean"
+    open fun attack() {
         var x = "${name} use Fist Attack!"
         print(x)
-}
+    }
+    open fun result(){
+        var y = 1
+        when (y) {
+            1 -> print("human don't have mana")
+            else -> {
+                print("merge have mana")
+            }
+        }
+    }
+
 }
 
-class Mage : Human(){
-    override var name:String="Jake"
-    override fun attack(){
+class Mage : Human() {
+    override var name: String = "Jake"
+    override fun attack() {
         var x = "${name} use Fireball!"
         print(x)
     }
-
-
+    override fun result(){
+        var y = 2
+        when (y) {
+            1 ->print("human don't have mana")
+            else -> {
+                print("merge have mana")
+            }
+        }
+    }
 }
     val human = Human()
     val mage = Mage()
 
+
     println(human.attack())
     println(mage.attack())
+    println(human.result())
+    println(mage.result())
 
 
 
