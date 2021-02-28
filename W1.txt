@@ -1,0 +1,21 @@
+1. Try the statements below in REPL. Please answer that there are correct or not and explain the reasons.
+答案：
+a.可以print出「9527」。
+b.錯誤，「Int」不能有小數點。
+c.可以print出「Hello Kotlin!」。
+d.錯誤，若要使content這個常數設為nullable，要改為「val content : String? = null」
+e.可以print出「556.6」，「Double?」表示number為nullable。
+f.錯誤，若要在listOf中設null，打出「’’，’’」也就是空字串即可。
+g.可以print出「"Wayne", "Chen"」。
+h.錯誤，需設「if」也就是「?.」才能正確執行。
+i.可以print出「2」，因為「list?.size」的指令是如果變數「list」有值，就會執行「size」，因為有兩項資料，所以會print出「2」。
+
+
+2. Read the code below, choose the correct answer and explain the reason
+答案：c. "Your grace."
+因為「Hello and welcome to AppWorks School :)」這個字串的長度是「39」，所以會print出「your grace」。
+
+
+3. Read the code below, choose the correct answer and explain the reason.
+答案：d. val array = Array(6) { 1000.0.pow( it ) }
+因為「Array(6)」是代表共有六筆資料，「1000.0.pow( it )」代表從第一筆數字開始，每一筆資料會乘與1000，在第一筆數字設定為１的情況下，第二筆就會是1000，第三筆會是1000000，以此類推。
