@@ -1,0 +1,69 @@
+★練習一
+val list = listOf("Sean","Jake","Sandy")
+println(list.size)
+println(list[2])
+println(list.contains("Sean"))
+println(list.isEmpty())
+println(list)
+
+for (List in list){//取出每個值
+    println(List)
+}
+
+★練習二
+val list = listOf("Sean","Jake","Sandy")
+println(list.size)
+println(list[2])
+println(list.contains("Sean"))
+println(list.isEmpty())
+println(list)
+
+for (List in list){//取出每個值
+    println(List)
+}
+
+★練習三 extension擴展(加入新功能)
+class Account{
+    var id:String=""
+}
+
+fun Account.Print(){//加入print的功能
+    println("帳號:"+id)
+}
+
+val account=Account()
+account.id="123"
+account.Print() //呼叫上方設定的功能
+
+★練習四
+data class Account(val id:String,val name:String)
+//前面加data會變成資料類別，並自動附與以下功能
+// 1.equals() 2.hashcode() 3.toString() 4.component() 5.copy()
+
+val account_1=Account("123","Sean")
+val account_2=Account("666","Jake")
+val account_temp=account_1
+
+println(account_1.equals(account_2)) //兩個資料是否相同
+println(account_1.hashCode())  //根據存放的資料生成雜錯碼
+println(account_temp.hashCode())
+println(account_2.hashCode())
+println(account_1.id)
+println(account_1.name)
+
+★練習五
+class Box<T>(t:T){ //(T:泛型)宣告是什麼資料類別就是什麼
+    var value=t
+}
+
+val box_int=Box(1)
+println(box_int.value)
+
+
+
+
+
+
+
+
+
