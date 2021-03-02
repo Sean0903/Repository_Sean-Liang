@@ -1,0 +1,64 @@
+★練習一
+enum class Color{ //提供一個變數，一組具名的整數常數，可使用列舉
+    YELLOW,
+    GREEN,
+    RED,
+}
+
+enum class Day{
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+}
+
+//ordinal 順序值
+println("${Color.YELLOW.ordinal}:${Color.YELLOW.name}")
+println("${Day.WEDNESDAY.ordinal}:${Day.WEDNESDAY.name}")
+
+★練習二
+var mystring = "not empty"
+if (mystring != "" ){
+    println("not empty")
+}else{
+    println("is empty")
+}
+
+★練習三
+×錯誤
+var mystring = "not empty"
+val result = if (mystring!=""){
+println("not empty")
+}else{
+    println("is empty")
+}
+
+print(result) //kotlin.Unit 因為沒有return
+
+√正確
+var mystring = "not empty"
+val result = if (mystring!=""){
+"not empty"
+}else {
+    "is empty"
+}
+print(result) //not empty
+
+★練習四
+val result = "value"
+
+when (result){
+    is String ->println("excellent")
+    else ->println("It's a value")
+} //excellent
+
+
+★練習五
+val result = "value"
+
+when (result){
+    "value"->{
+        println("It's a value")
+        println("what the hell")
+    }   
+    is String ->println("excellent")
+} //It's a value,what the hell  第二個命令不會被讀取
