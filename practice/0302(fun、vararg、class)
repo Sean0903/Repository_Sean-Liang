@@ -1,0 +1,52 @@
+★練習一
+
+val result ="value"
+val whenValue = when(result){
+    "value"->{
+        println("It's a value")
+        println("Second statement")
+        "no"
+    }
+    is String->{
+        println("excellent")
+    "yes"
+    }
+    else-> {
+        println("I came to this?")
+        "no matter yes or no"
+    }
+}
+
+println(whenValue)
+
+★練習二
+×錯誤
+fun printDetails(name:String,email:String="",phone:String){
+    println("name:$name"-"email:$email"-"phone:$phone") //錯誤，不用每個都強調是字串
+}
+
+printDetails("Sean",phone = "6481")
+
+√正確
+fun printDetails(name:String,email:String="",phone:String){
+    println("name:$name-email:$email-phone:$phone")
+}
+
+printDetails("Sean",phone = "6481")
+
+★練習三
+fun printstrings (vararg strings:String){ //vararg可以print出多個結果
+    for (string in strings){
+        println(string)
+    }
+}
+
+printstrings("1")
+printstrings("1","2")
+printstrings("1","2","3")
+
+
+★練習四
+
+
+★練習五
