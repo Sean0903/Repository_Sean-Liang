@@ -47,6 +47,25 @@ printstrings("1","2","3")
 
 
 ★練習四
+class Customer{
+    var id=0
+    var name:String=""
+    val surname:String=""
+}
+
+val customer=Customer()
+customer.id=10
+customer.name="Sean"
+
+println(customer.id)
+println(customer.name)
 
 
-★練習五
+★練習五 (練習四的超簡潔版)
+class Customer(var id:Int,var name:String){}
+
+val customer=Customer(10,"Sean")
+
+println(customer.id)
+println(customer.name)
+
