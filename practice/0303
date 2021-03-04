@@ -1,0 +1,85 @@
+★練習一
+class Customer (val id:Int,var name:String){
+    init{//使name被print出來時是大寫
+        name = name.toUpperCase()
+    }
+}
+
+val customer=Customer(10,"hadi")
+
+println(customer.name)
+
+★練習二
+data class Customerkotlin(var id:Int,var name:String,var email:String)
+
+val customer1=Customerkotlin(1,"Sean","sean@gmail.com")
+val customer2=Customerkotlin(2,"Sean","sean@gmail.com")
+
+if(customer1==customer2){ //兩個等號，關係運算子「等於」
+    println("They are the same")
+}else{
+    println("They are not the same")
+}
+
+val customer3=customer1
+println(customer3.id)
+
+val customer4 = customer1.copy(email = "seandreamland@gmail.com")
+//使用copy，可以針對資料再編修
+println(customer4.id)
+println(customer4.name)
+println(customer4.email)
+
+
+★練習三
+enum class Priority(val value:Int){
+    MINOR(-1),
+    NORMAL(0),
+    MAJOR(0),
+    CRITICAL(10),
+}
+
+val priority = Priority.NORMAL
+
+println(priority)//NORMAL
+println(priority.value)//0
+println(priority.ordinal)//1
+println(Priority.CRITICAL.ordinal)//3
+println(Priority.CRITICAL.name)//CRTUCAL
+
+
+★練習四
+enum class Priority(val value:Int){
+    MINOR(-1),
+    NORMAL(0),
+    MAJOR(0),
+    CRITICAL(10),
+}
+
+val priority = Priority.NORMAL
+
+for (priorityInList in Priority.values()){
+    println(priorityInList)
+}
+
+
+★練習五
+enum class Priority(val value:Int){
+    MINOR(-1){
+        override fun toString(): String {
+         return "Minor Priority" 
+        }
+             },
+    NORMAL(0),
+    MAJOR(0),
+    CRITICAL(10),
+}
+
+val priority = Priority.NORMAL
+println(priority)// NORMAL
+
+val p=Priority.valueOf("MAJOR")//呼叫Priority中的資料
+println(p.ordinal)//2
+
+val priority1=Priority.MINOR
+println(priority1) //Minor Priority
