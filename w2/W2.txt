@@ -1,0 +1,32 @@
+1. What is Inheritance ? Try to explain in Mandarin.
+「Inheritance」的意思是繼承，也就是甲、乙兩筆不同的資料，乙可以繼承甲的內容，不用重新再編寫一次，並且可以通過「override(覆寫)」將甲資料中原本的內容改寫。
+
+2. How to split a string in Android? Explain your understanding, and even better to attach some sample code.
+在Android中，若string很長，想要分割成不同段落，就可以使用split（“[$]”）//$為要分割的字元。
+
+3. What kind of key-value pair collection do we use in Android? Attach a sample code that uses for-loop to print each key-value pair.
+val hashmap=hashMapOf<Int,String>()
+
+  hashmap.put(1,"apple")
+  hashmap.put(2,"banana")
+  hashmap.put(3,"melon")
+  hashmap.put(4,"strawberry")
+
+  for ((key,value) in hashmap){
+      Log.d("MainActivity","Hash Map[$key]=$value")
+  }
+
+4. What's the difference between ArrayList and LinkedList? Try to explain in Mandarin.
+「ArrayList」和「LinkedList」兩者皆是資料的集合，但是資料結構不同。ArrayList是動態陣列的資料結構，每筆資料在記憶體中儲存地址是連續的，LinkedList是連結串列的資料結構，每筆資料是鏈接起來的，包括previous是該節點的上一個節點、 next是該節點的下一個節點、element是該節點所包含的值，也是由於這一性質支援了每個元素在記憶體中分佈儲存。
+
+5. What are Value Type variables? List out the Value Type variables you know.
+Value type是可以儲存變數的型別，例如：byte、short、int、long、float、double、char、string。
+
+6. What's the maximum value of Int ? If you want to represent integers larger than the limit, what should you do instead of using int variables?
+Int的最大值是「2147483647」，若要放入更大的值，就要轉為Long的資料型態。
+val a=21474836477777
+
+print(a.toLong())//21474836477777
+
+print(Int.MAX_VALUE)//214748364
+
