@@ -1,0 +1,33 @@
+1. What is Encapsulation ? Try to list out the benefits of Encapsulation.
+Encapsulation封裝，是定義程式碼僅該物件可以使用，或是可以開放給其他物件，若是開放，也可以詳加定義開放的程度，有四個定義。
+以classA為例
+(一)private：只有A才可以存取
+(二)package：只有和A同一個package的class才可以存取
+(三)protected：只有同一個package或是A的子類別才可以存取
+(四)public：所有的class都可以存取
+封裝可以將物件使用介面的程式實作部份隱藏起來，不讓使用者看到，確保使用者無法任意更改物件內部的重要資料，可以讓程式碼更容易理解與維護，也加強了程式碼的安全性。
+2. Try to explain what is enum and why we use them.
+Enum列舉，可以將性質雷同的資料放進列舉中，例如季節、貨幣、遊戲指令等等，在放入的同時會自動被默認排序由0開始至最後一筆資料且資料行型態是Int，可以透過呼叫資料本身的名稱或是排序進行編寫。
+列舉常會被使用在狀態判斷上，例如使用if，若狀態符合就會進入下一個，優勢則是不管設幾個列舉，都只占一個 int (32 bit) 的記憶體位置，不會占用太大的運轉效能。
+3. How to use enum in Kotlin? Attach a sample code that use enum in Kotlin.
+enum class Color{
+    YELLOW,
+    GREEN,
+    RED,
+}
+enum class Day{
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+}
+println("${Color.YELLOW.ordinal}:${Color.YELLOW.name}") //0:YELLOW
+println("${Day.WEDNESDAY.ordinal}:${Day.WEDNESDAY.name}") //2:WEDNESDAY
+
+4. What are the differences between LinearLayout and RelativeLayout ? Try to explain in
+details.
+Linear Layout線性布局，顧名思義他的布局都是線性的，可以調整為水平或垂直的模式，但任何一行都只能存在一個元件。要在線性布局中針對元件的位置或大小作修改，通常會用以下幾種方式，gravity設定對齊位置，height、width、weight設定高度、寬度、權重。
+Relative Layout相對佈局，可以透過相對位置來設定布局內各個元件的位置，但是每個元件至少要設定上、下、左、右，四個方位中的三個相對位置，否則會報錯。相對佈局可以透過layout_alignParentBottom(Bottom可改為Right、Top、Left、元件id)將此元件對齊於指定，或是用layout_marginBottom(Bottom可改為Right、Top、Left、元件id) 將該元件設定離布局畫面指定位置有多少距離。
+綜合以上兩個布局的說明，以元件位置設定、元件大小調整來比較兩者差異。元件位置的設定，若有多個元件要排列水平和垂直，線性布局就需要兩個布局才能完成，相對布局則可以透過元件彼此之間的相對位置來設定。元件大小的調整，線性布局必須要用height、width的指令來調整，相對布局則可以在介面上直接手動調整。
+
+5. Try to explain the benefits of ConstraintLayout . Why you should use it?
+ConstraintLayout的優勢是元件位置的調整容易、app的運轉效能也比較好，假若使用RelativeLayout來布局，其下可能得要塞入多個LinearLayout、RelativeLayout以及諸多元件，介面調動上比較麻煩，也會造成多階層、效能降低，ConstraintLayout則可以直接在頁面定位元件，並且在介面上拖動就可以調整元件位置，並且能避免這樣階層、運轉效能降低的情況出現。
