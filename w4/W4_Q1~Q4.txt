@@ -1,0 +1,14 @@
+1. What is Polymorphism? Try to explain in Mandarin.
+Polymorphism多型，是由接收者（接收到這個訊息的物件）來解釋，而不是由訊息發出者（sender）來解釋。所以，在執行時只要接受者換成不同的物件或是instance，系統的行為就會改變。
+2. Here are the 7 important lifecycle methods of an Activity:
+i. onCreate()→app被開啟，會進入MainActivity並從setContenview載入畫面的布局，通常onCreate只會被執行一次。
+ii. onStart()→將頁面以及元件視覺化。
+iii. onResume()→使用者開始操作介面。
+iv. onPause()→可能app被切換到畫面後(有來電、準備切換到其他app等等情況)，所以進入暫停，若使用者此時切回來，會到onResume的階段，可以繼續使用app。
+v. onStop()→若app長時間未被使用(接聽電話、切換到其他app等等)，會變成onStop，若此時使用者切回app，app會先經過onRestart再回到onStart。
+vi. onDestroy()→若使用者關掉app，或是手機有多個程式在執行，在系統資源極度缺乏下，手機可能會自斷消去閒置的app，兩種情況下都會進入onDestroy，app結束。
+Try to explain when are they called during the lifecycle of Activity.
+3. What is the Android Jetpack?
+Jetpack 是一套庫、工具和指南，可幫助開發者更輕鬆地編寫優質應用。這些組件可幫助使開發者遵循最佳做法、讓開發者擺脫編寫樣板代碼的工作並簡化複雜任務，以便將精力集中放在所需的代碼上。換言之，Google利用Jetpack將一些優秀的Android組件庫進行了標準化。
+4. What is Coroutines? Why we use it? Try to explain in Mandarin
+Coroutines協程的好處是，當有多個函式(A、B、C)彼此鏈結需要使用者輸入資訊或是較長時間才能被執行時，為避免B要等待A的結果，C要等待B的結果，造成main thread只能停擺在這邊等待，協程允許函式被 「暫停」 (suspend)，而且被暫停的函式(A、B、C)後續也可以被恢復，並從暫停時保留的狀態繼續執行。
